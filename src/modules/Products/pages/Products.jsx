@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { fetchingData } from "./api-Services/fetchingdata"
-import MediaCard from "./Product"
+import { fetchingData } from "../../../api-Services/fetchingdata"
+import MediaCard from "../components/Product"
 import "./Product.css"
 const Products = () => {
     const [product, setProduct] = useState([])
