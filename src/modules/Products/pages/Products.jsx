@@ -3,21 +3,20 @@ import "../components/Product.css"
 import { fetchingData } from "../../../api-Services/fetchingdata"
 import SearchResults from "../components/SearchResults";
 import ProductCards from "../components/ProductCard";
-
-
- 
-
+  
+let count = 0 
   const Products = () => {
     const [products, setProducts] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
   
     useEffect(() => {
-      const fetchProducts = async () => {
+      if(count==0)fetchProducts();
+      count+=1
+    }, []);
+    const fetchProducts = async () => {
         const data = await fetchingData();
         setProducts(data);
       };
-      fetchProducts();
-    }, []);
   
     const handleSearch = (event) => {
       const searchTerm = event.target.value.toLowerCase();

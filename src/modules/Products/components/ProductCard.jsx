@@ -8,7 +8,7 @@ const ProductCards = ({ products }) => {
             {products.map(({ image, price, name, rating }) => {
                 if (!rating) return null;
                 const { average, reviews } = rating;
-                return <MediaCard key={name + price} img={image} price={price} name={name} average={average} reviews={reviews} />;
+                return <MediaCard key={name + price + Math.random()} img={image} price={price} name={name} average={average} reviews={reviews} />;
             })}
         </div>
     );

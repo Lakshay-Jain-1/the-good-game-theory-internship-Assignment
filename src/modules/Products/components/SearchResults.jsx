@@ -9,7 +9,7 @@ const SearchResults = ({ searchProducts }) => {
         {searchProducts.map(({ image, price, name, rating }) => {
           if (!rating) return null;
           const { average, reviews } = rating;
-          return <MediaCard key={name} img={image} price={price} name={name} average={average} reviews={reviews} />;
+          return <MediaCard key={name+ Math.random()} img={image} price={price} name={name} average={average} reviews={reviews} />;
         })}
       </div>
     );
